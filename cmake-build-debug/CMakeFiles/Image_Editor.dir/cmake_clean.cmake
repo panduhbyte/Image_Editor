@@ -1,9 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Image_Editor.dir/main.cpp.obj"
+  "CMakeFiles/Image_Editor.dir/main.cpp.o"
   "Image_Editor.pdb"
-  "Image_Editor.exe"
-  "Image_Editor.exe.manifest"
-  "libImage_Editor.dll.a"
+  "Image_Editor"
 )
 
 # Per-language clean rules from dependency scanning.

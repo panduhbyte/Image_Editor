@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2017.2.2\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\Image_Editor.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\Image_Editor.dir/objects.a @CMakeFiles\Image_Editor.dir\objects1.rsp
-C:\MinGW\bin\g++.exe -g   -Wl,--whole-archive CMakeFiles\Image_Editor.dir/objects.a -Wl,--no-whole-archive  -o Image_Editor.exe -Wl,--out-implib,libImage_Editor.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Image_Editor.dir\linklibs.rsp
+/Library/Developer/CommandLineTools/usr/bin/c++  -g -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Image_Editor.dir/main.cpp.o  -o Image_Editor 

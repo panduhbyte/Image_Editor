@@ -1,11 +1,12 @@
 #include <iostream>
 #include <string>
+#include <fstream>
 using namespace std;
 
 class Image{
 private:
     int width, height;  //image dimensions
-    int *image_array;   //pointer to the dynamically allocated image array
+    int **image_array;   //pointer to the dynamically allocated image array
 
 public:
     Image();    //constructor - makes empty image
@@ -13,7 +14,8 @@ public:
     Image(string input_file);
                 //makes an image object using dimensions
     Image(int width, int height);
-    ˜Image ();  //destructor - provides as many destructors needed
+
+    ~Image();  //destructor - provides as many destructors needed
 
                 //accessors / mutators
     int getWidth();
@@ -23,12 +25,16 @@ public:
 
                 //set/get an image pixel by row and col address
                 //pixel is a 3 element r,g,b triple
-    void getImagePixel(int col, int row, int *pixel);
+    getImagePixel(int col, int row, int *pixel);
     void setImagePixel(int col, int row, int *pixel);
 
 
-    read(string infile);
-    write(string outfile);
+    read(string infile){
+
+    };
+    write(string outfile){
+
+    };
 };
 
 int main() {
