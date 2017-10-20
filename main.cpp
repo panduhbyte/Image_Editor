@@ -1,29 +1,29 @@
 #include <iostream>
-#include <string>
 #include <fstream>
-#include <cstdlib>
-#include <stdlib.h>
 using namespace std;
 
 class Image{
 private:
-    int width, height, col, row, max, ppm_w;  //image dimensions
+    int width, height, max, ppm_w;  //image dimensions
     int **image_array;   //pointer to the dynamically allocated image array
-    string  temp_file, magic_number;
+    string magic_number;
     ifstream infile;
     ofstream outfile;
 
 public:
     Image(){
-
     };
 
     ~Image();  //destructor - provides as many destructors needed
 
-                //set/get an image pixel by row and col address
-                //pixel is a 3 element r,g,b triple
-    void getImagePixel();
-    void setImagePixel();
+    //makes row red
+    void setPixel(int row){
+        for(int col=0;col<ppm_w;col = col+3){
+            image_array[row][col] = 255;
+            image_array[row][col+1] = 0;
+            image_array[row][col+2] = 0;
+        }
+    };//Close setImagePixel
 
 
     void read(){
@@ -40,17 +40,34 @@ public:
                 }
             }
         }//End of if infile.is_open
+        else{cout<<"Error opening file.\n";}
         infile.close();
         infile.clear();
     };
 
     void write(){
-
+        outfile.open("red_yosemite.ppm");
+        outfile<<magic_number<<"\n"<< width<<" "<<height<<"\n"<<max<< "\n";
+        for(int rowNum=0;rowNum<height;rowNum++){
+            for(int colNum=0;colNum<ppm_w;colNum++){
+                if(colNum == ppm_w-1){
+                    outfile << image_array[rowNum][colNum]<<"\n";
+                }
+                else{
+                    outfile << image_array[rowNum][colNum]<<" ";
+                }
+            }
+        }
+        outfile.close();
+        outfile.clear();
     };
 
     };
 
 int main() {
-
+    Image pic;
+    pic.read();
+    pic.setPixel(400);
+    pic.write();
     return 0;
 }
